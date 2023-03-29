@@ -1,9 +1,8 @@
+import { Home } from "../common/Home/home";
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <Home />
   );
 }
 
