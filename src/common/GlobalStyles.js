@@ -1,8 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-import background from "../src/background.jpg"
-
-
-
 export const GlobalStyles = createGlobalStyle`
 html {
     box-sizing: border-box;
