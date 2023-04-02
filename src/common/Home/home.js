@@ -1,8 +1,8 @@
 import React from 'react';
 import { Search } from './Search/search';
-import { CityName, DateInformation, ImgContainer, Information, InformationsWrapper, RestInformations, RestInformationsWrapper, Sky, Temperature, WeatherContainer, WeatherImage, Wrapper } from './styledHome';
+import { CityName, ImgContainer, Information, InformationsWrapper, RestInformations, RestInformationsWrapper, Sky, Temperature, WeatherContainer, WeatherImage, Wrapper } from './styledHome';
 import sun from '../Images/sun.svg'
-import { CurrentDate} from './Date/date';
+import { CurrentDate } from './Date/date';
 export const Home = () => {
     return (
         <Wrapper>
