@@ -1,6 +1,6 @@
 import React from 'react';
 import { Search } from './Search/search';
-import { CityName, DateInformation, InformationsWrapper, RestInformations, RestInformationsWrapper, Sky, Temperature, WeatherContainer, WeatherImage, Wrapper } from './styledHome';
+import { CityName, DateInformation, ImgContainer, Information, InformationsWrapper, RestInformations, RestInformationsWrapper, Sky, Temperature, WeatherContainer, WeatherImage, Wrapper } from './styledHome';
 import sun from '../Images/sun.svg'
 export const Home = () => {
     return (
@@ -13,13 +13,14 @@ export const Home = () => {
                 <CityName>Londyn</CityName>
                 <Sky>Cloudy</Sky>
                 <WeatherContainer>
-                    <WeatherImage src={sun} />
+                    <ImgContainer>
+                        <WeatherImage src={sun} />
+                    </ImgContainer>
                     <Temperature> 23° </Temperature>
                     <RestInformationsWrapper>
-                        <RestInformations>Real Feel: 28°  </RestInformations>
-                        <RestInformations>Humdititi: 80%</RestInformations>
-                        <RestInformations>Wind: 25 km/h</RestInformations>
-
+                        <RestInformations>Real Feel : <Information>28°</Information></RestInformations>
+                        <RestInformations>Humdititi : <Information>25%</Information></RestInformations>
+                        <RestInformations>Wind : <Information>25 km/h</Information></RestInformations>
                     </RestInformationsWrapper>
                 </WeatherContainer>
             </InformationsWrapper>

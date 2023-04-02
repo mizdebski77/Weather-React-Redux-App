@@ -1,8 +1,8 @@
 export const theme = {
     color: {
         fontMain: "#ffffff",
-        blue: "#1976D2",
-        cyan: "#0097A7",
+        gradeint1: "rgba(100, 100, 100, 0.2)",
+        gradeint2: "rgba(0, 0, 0, 0.5)",
 
 
     },
