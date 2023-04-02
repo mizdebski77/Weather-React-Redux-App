@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import SVG from "react-inlinesvg";
 
 export const Wrapper = styled.main`
     max-width: 1000px;
@@ -36,16 +37,19 @@ export const WeatherContainer = styled.section`
     justify-content: center;
     align-items: center;
     text-align: center;
+    gap: 30px;
 `;
 
 export const ImgContainer = styled.div`
+    text-transform: capitalize;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 32px;
 `;
 
 export const WeatherImage = styled.img`
-    width: 50px;
+    width: 70px;
 `;
 
 export const Temperature = styled.h1`
@@ -56,14 +60,40 @@ export const Temperature = styled.h1`
 export const RestInformationsWrapper = styled.div`
     display: grid;
     gap: 10px;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
 `;
 
 export const RestInformations = styled.h3`
     margin: 0;
+    font-weight: normal;
     font-size: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
 `;
 
 export const Information = styled.span`
     font-style: italic;
-    font-weight: normal;
+    font-weight: bold;
+`;
+
+export const Icon = styled(SVG)`
+    width: 40px;
+    fill: ${({theme}) => theme.color.svgFill};
+`;
+
+export const SunContainer = styled.div`
+    display: flex;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-around;
+`;
+
+export const Sun = styled.h3`
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    align-items: center;
 `;
