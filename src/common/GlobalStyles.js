@@ -1,4 +1,6 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+import background from "./Images/background.jpg";
+
 export const GlobalStyles = createGlobalStyle`
 html {
     box-sizing: border-box;
@@ -12,9 +14,12 @@ html {
   
   body {
   min-height: 100vh;
-  background: #0c78e4;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   word-break: break-word;
   padding: 10px;
-    }
+  color: ${({ theme }) => theme.color.fontMain};
+  background-image: url("${background}");
+  background-size: cover;
+  background-position: center;
+  backdrop-filter: blur(1px);
+  }
   `;

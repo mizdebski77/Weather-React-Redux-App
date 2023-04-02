@@ -1,12 +1,14 @@
 import React from 'react';
-import { Wrapper, Location } from './styledSearch';
+import { Wrapper, Location, Button, Image } from './styledSearch';
+import search from '../../Images/search.svg'
 
 export const Search = () => {
     return (
         <Wrapper>
-            <Location/>
+            <Location placeholder='Enter The City or Country ' />
+            <Button> <Image src={search} /> Search city </Button>
+            
         </Wrapper>
-
     );
 };
 
