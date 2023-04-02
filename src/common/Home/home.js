@@ -2,14 +2,13 @@ import React from 'react';
 import { Search } from './Search/search';
 import { CityName, DateInformation, ImgContainer, Information, InformationsWrapper, RestInformations, RestInformationsWrapper, Sky, Temperature, WeatherContainer, WeatherImage, Wrapper } from './styledHome';
 import sun from '../Images/sun.svg'
+import { CurrentDate} from './Date/date';
 export const Home = () => {
     return (
         <Wrapper>
             <Search />
             <InformationsWrapper>
-                <DateInformation>
-                    Tuesday, 31 May 2022 | Local Time 03:15 PM
-                </DateInformation>
+                <CurrentDate />
                 <CityName>Londyn</CityName>
                 <Sky>Cloudy</Sky>
                 <WeatherContainer>

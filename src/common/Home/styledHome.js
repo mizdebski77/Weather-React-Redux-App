@@ -17,11 +17,6 @@ export const InformationsWrapper = styled.section`
     display: grid;
 `;
 
-export const DateInformation = styled.h3`
-    text-align: center;
-    font-weight: normal;
-`;
-
 export const CityName = styled.h1`
     margin: 0;
     font-size:52px;
