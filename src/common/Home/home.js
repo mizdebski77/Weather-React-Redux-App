@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Search } from './Search/search';
-import { CityName, ImgContainer, Information, Icon, InformationsWrapper, RestInformations, RestInformationsWrapper, Sky, Sun, SunContainer, Temperature, WeatherContainer, WeatherImage, Wrapper } from './styledHome';
+import { CityName, ImgContainer, Information, Icon, InformationsWrapper, RestInformations, RestInformationsWrapper, Sky, Sun, SunContainer, Temperature, WeatherContainer, WeatherImage, Wrapper, SunInfo } from './styledHome';
 import { CurrentDate } from './Date/date';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchWeather, selectStatus, selectWeather } from './FetchWeather/weatherSlice';
@@ -18,14 +18,14 @@ export const Home = () => {
     const status = useSelector(selectStatus);
     const dispatch = useDispatch();
 
-
     useEffect(() => {
         dispatch(fetchWeather());
     }, [dispatch]);
 
-    console.log();
-
     if (status !== "loading") {
+
+        const SunRise = selector.sys.sunrise;
+        const SunSet = selector.sys.sunset;
 
 
         return (
@@ -47,10 +47,15 @@ export const Home = () => {
                         </RestInformationsWrapper>
                     </WeatherContainer>
                     <SunContainer>
-                        <Sun> <Icon src={sun} /> Rise </Sun>
-                        <Sun> <Icon src={sunset} /> Set </Sun>
-                        <Sun> <Icon src={sun} /> High </Sun>
-                        <Sun> <Icon src={sun} /> Low </Sun>
+                        <Sun noneBorder> <Icon src={sun} /> <SunInfo> Rise </SunInfo></Sun>
+                        <Sun> <Icon src={sunset} />  <SunInfo> Set </SunInfo> </Sun>
+                        <Sun> <Icon src={sun} />   <SunInfo> High </SunInfo> </Sun>
+                        <Sun> <Icon src={sun} />   <SunInfo> Low </SunInfo> </Sun>
+
+                        <Sun noneBorder oneColumn> {(new Date(SunRise * 1000)).toLocaleTimeString()} </Sun>
+                        <Sun oneColumn> {(new Date(SunSet * 1000)).toLocaleTimeString()} </Sun>
+                        <Sun oneColumn> {Math.round(selector.main.temp_max - 273)}° </Sun>
+                        <Sun oneColumn> {Math.round(selector.main.temp_min - 273)}° </Sun>
                     </SunContainer>
                 </InformationsWrapper>
             </Wrapper>
