@@ -1,9 +1,10 @@
 import { getResponse } from "./API";
 import { fetchWeather, fetchWeatherError, fetchWeatherSuccess } from "./weatherSlice";
-import { call, put, takeLatest } from "redux-saga/effects";
+import { call, delay, put, takeLatest } from "redux-saga/effects";
 
 function* fetchWeatherHandler() {
     try {
+        yield delay(500000);
         const weather = yield call(getResponse);
         yield put(fetchWeatherSuccess(weather));
     } catch (error) {

@@ -12,11 +12,7 @@ export const Search = () => {
         dispatch(setLocation(location));
     }
 
-    const cityName = useSelector(state => state.location.cityName);
-
-    console.log(cityName);
-
-
+    
     return (
         <Wrapper>
             <Location
