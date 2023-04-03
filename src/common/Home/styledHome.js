@@ -90,27 +90,22 @@ export const Icon = styled(SVG)`
 export const SunContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 0.3fr 0.4fr; 
-    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+    border: 1px solid white;
 `;
 
 export const Sun = styled.div`
     display: grid;
-    grid-template-columns: 20% 30%;
-    gap: 10px;
+    grid-template-columns:auto 30%;
     align-items: center;
     justify-content: center;
     text-align:  center;
-    border-left: 1px solid white;
 
     ${({ oneColumn }) => oneColumn && css`
         grid-template-columns: 1fr;
         text-align: center;
         font-size: 20px;
-    `};
-
-    ${({ noneBorder }) => noneBorder && css`
-        border: none;
     `};
 `;
 
@@ -118,9 +113,3 @@ export const SunInfo = styled.h3`
     margin: 0;
     
 `;
-
-export const HoursContainer = styled.div`
-
-`;
-
-export const Hours 
