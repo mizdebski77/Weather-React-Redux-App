@@ -4,7 +4,7 @@ import { call, delay, put, takeLatest } from "redux-saga/effects";
 
 function* fetchWeatherHandler() {
     try {
-        yield delay(500000);
+        yield delay(1000);
         const weather = yield call(getResponse);
         yield put(fetchWeatherSuccess(weather));
     } catch (error) {

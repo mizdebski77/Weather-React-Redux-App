@@ -9,8 +9,9 @@ import tear from "../Images/Weather/tear.svg";
 import wind from "../Images/Weather/wind.svg";
 import sun from "../Images/Weather/sun.svg";
 import sunset from "../Images/Weather/sunset.svg";
-import { Loader } from '../Loader/loader';
-
+import { Error } from './Error/error';
+import {Loader} from './Loader/loader'
+ 
 
 
 
@@ -26,7 +27,7 @@ export const Home = () => {
 
     return (
         <Wrapper>
-            {status === "loading" ? <Loader /> :
+            {status === "loading" ? <Loader /> : status === "error" ? <Error /> :
                 <>
                     <Search />
                     <InformationsWrapper>
