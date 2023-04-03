@@ -1,15 +1,13 @@
 import { Wrapper, Location, Button, Image } from './styledSearch';
 import search from '../../Images/search.svg'
 import { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 
 export const Search = () => {
     const [location, setLocation] = useState("");
-    const dispatch = useDispatch();
 
     const searchLocation = (event) => {
         event.preventDefault();
-        dispatch(setLocation(location));
+        setLocation(location);
     }
 
     

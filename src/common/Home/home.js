@@ -10,8 +10,8 @@ import wind from "../Images/Weather/wind.svg";
 import sun from "../Images/Weather/sun.svg";
 import sunset from "../Images/Weather/sunset.svg";
 import { Error } from './Error/error';
-import {Loader} from './Loader/loader'
- 
+import { Loader } from './Loader/loader'
+
 
 
 
