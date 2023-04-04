@@ -8,5 +8,6 @@ export const theme = {
 
     breakPoint: {
         phone: 800,
+        firtBreakPoint: 1000,
     }
 }
