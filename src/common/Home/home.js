@@ -12,9 +12,6 @@ import sunset from "../Images/Weather/sunset.svg";
 import { Error } from './Error/error';
 import { Loader } from './Loader/loader'
 
-
-
-
 export const Home = () => {
     const selector = useSelector(selectWeather);
     const status = useSelector(selectStatus);

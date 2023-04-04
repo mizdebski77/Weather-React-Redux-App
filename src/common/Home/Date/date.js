@@ -5,6 +5,6 @@ import { useCurrentDate } from './useCurentDate';
 export const CurrentDate = () => {
     const date = useCurrentDate();
     return (
-        <DateInformation> {date.toLocaleString("en-US", { weekday: "long", day: "numeric", month: "long", year: "numeric" })} | Local Time : {date.toLocaleString("en-US", { hour: "2-digit",  minute: "2-digit" })} </DateInformation>
+        <DateInformation> {date.toLocaleString("en-US", { weekday: "long", day: "numeric", month: "long", year: "numeric" })} | {date.toLocaleString("en-US", { hour: "2-digit",  minute: "2-digit" })} </DateInformation>
     );
 };

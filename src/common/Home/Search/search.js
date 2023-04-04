@@ -1,16 +1,23 @@
 import { Wrapper, Location, Button, Image } from './styledSearch';
 import search from '../../Images/search.svg'
 import { useState } from 'react';
+import { useDispatch } from "react-redux";
+import { fetchWeather } from "../FetchWeather/weatherSlice";
 
 export const Search = () => {
     const [location, setLocation] = useState("");
+    const dispatch = useDispatch();
+
 
     const searchLocation = (event) => {
         event.preventDefault();
-        setLocation(location);
-    }
+        if (location !== "") {
+            dispatch(fetchWeather(location));
+        }
+    };
 
-    
+
+
     return (
         <Wrapper>
             <Location
@@ -21,4 +28,3 @@ export const Search = () => {
         </Wrapper>
     );
 };
-
