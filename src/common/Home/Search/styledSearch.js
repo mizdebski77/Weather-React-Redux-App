@@ -4,6 +4,10 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     gap: 20px;
+    
+    @media (max-width: ${({theme}) => theme.breakPoint.phone}px) {
+        flex-direction: column;
+    }
 `;
 
 export const Location = styled.input`
@@ -15,6 +19,10 @@ export const Location = styled.input`
     &:focus {
         outline: none;
     };
+
+    @media (max-width: ${({theme}) => theme.breakPoint.phone}px) {
+        min-width: 200px;
+    }
 `;
 
 export const Button = styled.button`
@@ -30,6 +38,11 @@ export const Button = styled.button`
 
     &:hover{
         transform: scale(1.02);
+    }
+
+    @media (max-width: ${({theme}) => theme.breakPoint.phone}px) {
+        justify-content: flex-start;
+        gap: 10px;
     }
 `;
 

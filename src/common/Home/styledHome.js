@@ -9,6 +9,10 @@ export const Wrapper = styled.main`
     box-shadow: 0 0 30px #ffffff;
     background-image: linear-gradient(to bottom right,${({ theme }) => theme.color.gradeint2}, ${({ theme }) => theme.color.gradeint1});
     backdrop-filter: blur(5px);
+
+    @media (max-width: ${({theme}) => theme.breakPoint.phone}px) {
+        padding: 20px;
+    }
 `;
 
 export const InformationsWrapper = styled.section`
