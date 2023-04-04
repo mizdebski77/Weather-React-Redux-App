@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const searchSlice = createSlice({
     name: "location",
     initialState: {
-        cityName: "",
+        cityName: "Warsaw",
     },
     reducers: {
         setLocation: (state, action) => {

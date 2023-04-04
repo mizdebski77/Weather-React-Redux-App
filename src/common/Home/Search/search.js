@@ -11,9 +11,7 @@ export const Search = () => {
 
     const searchLocation = (event) => {
         event.preventDefault();
-        if (location !== "") {
             dispatch(fetchWeather(location));
-        }
     };
 
 

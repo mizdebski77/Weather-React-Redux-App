@@ -128,7 +128,6 @@ export const AdditionalInfoWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 30px;
-    border: 1px solid white;
     padding: 10px;
 
     @media (max-width: ${({ theme }) => theme.breakPoint.phone}px) {
