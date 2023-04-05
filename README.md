@@ -1,4 +1,4 @@
-# Weather App 📇
+# Weather App☀️
 ## Table of content
 
 - [Demo](#demo)
