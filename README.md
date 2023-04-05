@@ -28,6 +28,7 @@ The weather app is a one-page application that allows you to check the current w
 - Redux / Toolkit
 - Redux-Saga
 - Promises, async/await
+- Local Storage
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
