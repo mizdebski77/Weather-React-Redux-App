@@ -4,7 +4,6 @@
 - [Demo](#demo)
 - [General Information](#general-information)
 - [Technologies](#technologies)
-- [Available Scripts](#available-scripts)
 
 ## Demo
 
@@ -30,5 +29,4 @@ The weather app is a one-page application that allows you to check the current w
 - Promises, async/await
 - Local Storage
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
