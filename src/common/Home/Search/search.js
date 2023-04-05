@@ -3,6 +3,7 @@ import search from '../../Images/search.svg'
 import { useState } from 'react';
 import { useDispatch } from "react-redux";
 import { fetchWeather } from "../FetchWeather/weatherSlice";
+import { useEffect } from 'react';
 
 export const Search = () => {
     const [location, setLocation] = useState("");
@@ -11,8 +12,11 @@ export const Search = () => {
 
     const searchLocation = (event) => {
         event.preventDefault();
-            dispatch(fetchWeather(location));
+        dispatch(fetchWeather(location));
+
+        localStorage.setItem("cityName", location);
     };
+
 
 
 
