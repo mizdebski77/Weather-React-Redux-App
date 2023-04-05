@@ -1,14 +1,17 @@
 import axios from "axios";
 
-const API_KEY = '2d69c33ffd75da46682b9c8cc079fd6d';
-const URL = `https://api.openweathermap.org/data/2.5/weather`;
+const API_KEY = '00046eb59b4c4445bba180800230404';
+const URL = 'http://api.weatherapi.com/v1/forecast.json';
 
 export const getResponse = async (cityName) => {
     const response = await axios.get(URL, {
         params: {
-            q: cityName != null ? cityName : "Warsaw",
-            appid: API_KEY
-          }
+            q: cityName != null ? cityName : "London",
+            key: API_KEY,
+            days: 5,
+            aqi: 'no',
+            alerts: 'no'
+        }
     });
     return response.data;
 };

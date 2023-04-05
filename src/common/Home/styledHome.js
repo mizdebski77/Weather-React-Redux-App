@@ -37,11 +37,21 @@ export const CityName = styled.h1`
     margin: 0;
     font-size:48px;
     text-align: center;
-    margin: 40px;
 
     @media (max-width: ${({ theme }) => theme.breakPoint.phone}px) {
         font-size:32px;
         margin: 10px;
+    }
+`;
+
+export const Country = styled.span`
+    margin: 0;
+    font-size:36px;
+    text-align: center;
+    font-weight: normal;
+
+    @media (max-width: ${({ theme }) => theme.breakPoint.phone}px) {
+        font-size:28px;
     }
 `;
 
@@ -66,6 +76,7 @@ export const ImgContainer = styled.div`
     align-items: center;
     font-size: 32px;
     gap: 10px;
+    
 
     @media (max-width: ${({ theme }) => theme.breakPoint.phone}px) {
         font-size: 24px;
@@ -74,6 +85,11 @@ export const ImgContainer = styled.div`
 
 export const WeatherImage = styled.img`
     width: 70px;
+
+    ${({ small }) => small && css`
+         width: 50px;
+    `};
+    
     
     @media (max-width: ${({ theme }) => theme.breakPoint.phone}px) {
         width:50px;
@@ -95,6 +111,7 @@ export const RestInformationsWrapper = styled.div`
     text-align: left;
     align-items: center;
     justify-content: center;
+    
 `;
 
 export const RestInformations = styled.h3`
@@ -128,7 +145,9 @@ export const AdditionalInfoWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 30px;
-    padding: 10px;
+    padding: 10px 10px 20px 10px;
+    border-bottom: 0.5px solid white;
+
 
     @media (max-width: ${({ theme }) => theme.breakPoint.phone}px) {
         grid-template-columns: 1fr 1fr;
