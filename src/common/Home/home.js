@@ -35,10 +35,7 @@ export const Home = () => {
         const minutes = time.getMinutes().toString().padStart(2, '0');
         return `${hours}:${minutes}`;
     };
-
-    const currentTime = new Date(selector.location.localtime).getHours();
-
-
+    
     return (
         <Wrapper>
             {status === "loading" ? <Loader /> : status === "error" ? <Error /> :
@@ -83,19 +80,19 @@ export const Home = () => {
                             <ForecastTitle>Hourly Forecast</ForecastTitle>
                             <Forecast>
                                 <SunContainer>
-                                    <Sun oneColumn> {getFormattedTime(selector.forecast.forecastday[0].hour[currentTime + 1].time)} </Sun>
+                                    <Sun oneColumn> {getFormattedTime(selector.forecast.forecastday[0].hour[new Date(selector.location.localtime).getHours() + 1].time)} </Sun>
                                     <Sun> <WeatherImage small src={selector.forecast.forecastday[1].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[1].day.avgtemp_c)} ° </SunInfo> </Sun>
                                 </SunContainer>
                                 <SunContainer>
-                                    <Sun oneColumn> {getFormattedTime(selector.forecast.forecastday[0].hour[currentTime + 2].time)} </Sun>
+                                    <Sun oneColumn> {getFormattedTime(selector.forecast.forecastday[0].hour[new Date(selector.location.localtime).getHours() + 2].time)} </Sun>
                                     <Sun> <WeatherImage small src={selector.forecast.forecastday[2].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[2].day.avgtemp_c)} ° </SunInfo> </Sun>
                                 </SunContainer>
                                 <SunContainer>
-                                    <Sun oneColumn> {getFormattedTime(selector.forecast.forecastday[0].hour[currentTime + 3].time)} </Sun>
+                                    <Sun oneColumn> {getFormattedTime(selector.forecast.forecastday[0].hour[new Date(selector.location.localtime).getHours() + 3].time)} </Sun>
                                     <Sun> <WeatherImage small src={selector.forecast.forecastday[3].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[3].day.avgtemp_c)} ° </SunInfo> </Sun>
                                 </SunContainer>
                                 <SunContainer>
-                                    <Sun oneColumn> {getFormattedTime(selector.forecast.forecastday[0].hour[currentTime + 4].time)} </Sun>
+                                    <Sun oneColumn> {getFormattedTime(selector.forecast.forecastday[0].hour[new Date(selector.location.localtime).getHours() + 4].time)} </Sun>
                                     <Sun> <WeatherImage small src={selector.forecast.forecastday[4].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[4].day.avgtemp_c)} ° </SunInfo> </Sun>
                                 </SunContainer>
                             </Forecast>
