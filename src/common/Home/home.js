@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Search } from './Search/search';
-import { CityName, ImgContainer, Information, Icon, InformationsWrapper, RestInformations, RestInformationsWrapper, Sun, SunContainer, Temperature, WeatherContainer, WeatherImage, Wrapper, SunInfo, AdditionalInfoWrapper, Country } from './styledHome';
+import { CityName, ImgContainer, Information, Icon, InformationsWrapper, RestInformations, RestInformationsWrapper, Sun, SunContainer, Temperature, WeatherContainer, WeatherImage, Wrapper, SunInfo, AdditionalInfoWrapper, Country, ForecastContainer, ForecastTitle, Forecast } from './styledHome';
 import { CurrentDate } from './Date/date';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchWeather, selectStatus, selectWeather } from './FetchWeather/weatherSlice';
@@ -36,10 +36,7 @@ export const Home = () => {
         return `${hours}:${minutes}`;
     };
 
-    const currentTime = (new Date().getHours());
-
-    if (status === "success") {
-    }
+    const currentTime = new Date(selector.location.localtime).getHours();
 
 
     return (
@@ -81,44 +78,51 @@ export const Home = () => {
                             </SunContainer>
                         </AdditionalInfoWrapper>
 
-                        <AdditionalInfoWrapper>
-                            <SunContainer>
-                                <Sun oneColumn> {getDayOfWeek(selector.forecast.forecastday[1].date)} </Sun>
-                                <Sun> <WeatherImage small src={selector.forecast.forecastday[1].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[1].day.avgtemp_c)} ° </SunInfo> </Sun>
-                            </SunContainer>
-                            <SunContainer>
-                                <Sun oneColumn> {getDayOfWeek(selector.forecast.forecastday[2].date)} </Sun>
-                                <Sun> <WeatherImage small src={selector.forecast.forecastday[2].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[2].day.avgtemp_c)} ° </SunInfo> </Sun>
-                            </SunContainer>
-                            <SunContainer>
-                                <Sun oneColumn> {getDayOfWeek(selector.forecast.forecastday[3].date)} </Sun>
-                                <Sun> <WeatherImage small src={selector.forecast.forecastday[3].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[3].day.avgtemp_c)} ° </SunInfo> </Sun>
-                            </SunContainer>
-                            <SunContainer>
-                                <Sun oneColumn> {getDayOfWeek(selector.forecast.forecastday[4].date)} </Sun>
-                                <Sun> <WeatherImage small src={selector.forecast.forecastday[4].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[4].day.avgtemp_c)} ° </SunInfo> </Sun>
-                            </SunContainer>
-                        </AdditionalInfoWrapper>
 
+                        <ForecastContainer>
+                            <ForecastTitle>Hourly Forecast</ForecastTitle>
+                            <Forecast>
+                                <SunContainer>
+                                    <Sun oneColumn> {getFormattedTime(selector.forecast.forecastday[0].hour[currentTime + 1].time)} </Sun>
+                                    <Sun> <WeatherImage small src={selector.forecast.forecastday[1].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[1].day.avgtemp_c)} ° </SunInfo> </Sun>
+                                </SunContainer>
+                                <SunContainer>
+                                    <Sun oneColumn> {getFormattedTime(selector.forecast.forecastday[0].hour[currentTime + 2].time)} </Sun>
+                                    <Sun> <WeatherImage small src={selector.forecast.forecastday[2].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[2].day.avgtemp_c)} ° </SunInfo> </Sun>
+                                </SunContainer>
+                                <SunContainer>
+                                    <Sun oneColumn> {getFormattedTime(selector.forecast.forecastday[0].hour[currentTime + 3].time)} </Sun>
+                                    <Sun> <WeatherImage small src={selector.forecast.forecastday[3].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[3].day.avgtemp_c)} ° </SunInfo> </Sun>
+                                </SunContainer>
+                                <SunContainer>
+                                    <Sun oneColumn> {getFormattedTime(selector.forecast.forecastday[0].hour[currentTime + 4].time)} </Sun>
+                                    <Sun> <WeatherImage small src={selector.forecast.forecastday[4].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[4].day.avgtemp_c)} ° </SunInfo> </Sun>
+                                </SunContainer>
+                            </Forecast>
+                        </ForecastContainer>
 
-                        <AdditionalInfoWrapper>
-                            <SunContainer>
-                                <Sun oneColumn> {getFormattedTime(selector.forecast.forecastday[0].hour[currentTime + 1].time)} </Sun>
-                                <Sun> <WeatherImage small src={selector.forecast.forecastday[1].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[1].day.avgtemp_c)} ° </SunInfo> </Sun>
-                            </SunContainer>
-                            <SunContainer>
-                                <Sun oneColumn> {getFormattedTime(selector.forecast.forecastday[0].hour[currentTime + 2].time)} </Sun>
-                                <Sun> <WeatherImage small src={selector.forecast.forecastday[2].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[2].day.avgtemp_c)} ° </SunInfo> </Sun>
-                            </SunContainer>
-                            <SunContainer>
-                                <Sun oneColumn> {getFormattedTime(selector.forecast.forecastday[0].hour[currentTime + 3].time)} </Sun>
-                                <Sun> <WeatherImage small src={selector.forecast.forecastday[3].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[3].day.avgtemp_c)} ° </SunInfo> </Sun>
-                            </SunContainer>
-                            <SunContainer>
-                                <Sun oneColumn> {getFormattedTime(selector.forecast.forecastday[0].hour[currentTime + 4].time)} </Sun>
-                                <Sun> <WeatherImage small src={selector.forecast.forecastday[4].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[4].day.avgtemp_c)} ° </SunInfo> </Sun>
-                            </SunContainer>
-                        </AdditionalInfoWrapper>
+                        <ForecastContainer>
+                            <ForecastTitle>Daily Forecast</ForecastTitle>
+                            <Forecast>
+                                <SunContainer>
+                                    <Sun oneColumn> {getDayOfWeek(selector.forecast.forecastday[1].date)} </Sun>
+                                    <Sun> <WeatherImage small src={selector.forecast.forecastday[1].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[1].day.avgtemp_c)} ° </SunInfo> </Sun>
+                                </SunContainer>
+                                <SunContainer>
+                                    <Sun oneColumn> {getDayOfWeek(selector.forecast.forecastday[2].date)} </Sun>
+                                    <Sun> <WeatherImage small src={selector.forecast.forecastday[2].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[2].day.avgtemp_c)} ° </SunInfo> </Sun>
+                                </SunContainer>
+                                <SunContainer>
+                                    <Sun oneColumn> {getDayOfWeek(selector.forecast.forecastday[3].date)} </Sun>
+                                    <Sun> <WeatherImage small src={selector.forecast.forecastday[3].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[3].day.avgtemp_c)} ° </SunInfo> </Sun>
+                                </SunContainer>
+                                <SunContainer>
+                                    <Sun oneColumn> {getDayOfWeek(selector.forecast.forecastday[4].date)} </Sun>
+                                    <Sun> <WeatherImage small src={selector.forecast.forecastday[4].day.condition.icon} />   <SunInfo> {Math.round(selector.forecast.forecastday[4].day.avgtemp_c)} ° </SunInfo> </Sun>
+                                </SunContainer>
+                            </Forecast>
+                        </ForecastContainer>
+
                     </InformationsWrapper>
                 </>
             }

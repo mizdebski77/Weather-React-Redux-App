@@ -146,11 +146,10 @@ export const AdditionalInfoWrapper = styled.div`
     grid-template-columns: 1fr 1fr 1fr 1fr;
     margin-top: 30px;
     padding: 10px 10px 20px 10px;
-    border-bottom: 0.5px solid white;
 
 
     @media (max-width: ${({ theme }) => theme.breakPoint.phone}px) {
-        grid-template-columns: 1fr 1fr;
+       grid-template-columns: 1fr 1fr;
        row-gap: 30px;
     }    
 `;
@@ -186,4 +185,27 @@ export const Sun = styled.div`
 export const SunInfo = styled.h3`
     margin: 0;
     
+`;
+
+export const ForecastContainer = styled.section`
+    display: grid;
+`;
+
+export const ForecastTitle = styled.h1`
+    color: white;
+    margin-bottom: 10px;
+    font-weight: normal;
+    font-size: 28px;
+`;
+
+export const Forecast = styled.div`
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid white;
+    padding: 20px 10px; 
+
+    @media (max-width: ${({ theme }) => theme.breakPoint.phone}px) {
+       grid-template-columns: 1fr 1fr;
+       row-gap: 30px;
+    }  
 `;
